@@ -1,6 +1,9 @@
-package br.edu.ifpb.ads.padroes.atv1.rpg;
+package br.edu.ifpb.ads.padroes.atv1.rpg.Personagens;
 
-public class Personagem {
+import br.edu.ifpb.ads.padroes.atv1.rpg.Armaduras.Armadura;
+import br.edu.ifpb.ads.padroes.atv1.rpg.Armas.Arma;
+
+public class Personagem implements PrototypePersonagem{
 
     private String nome;
     private String raca;
@@ -28,6 +31,9 @@ public class Personagem {
         this.arma = arma;
         this.armadura = armadura;
         this.habilidades = habilidades;
+    }
+
+    public Personagem() {
     }
 
     // Getters e Setters básicos
@@ -83,6 +89,15 @@ public class Personagem {
     public String toString() {
         return String.format("%s - %s %s (F:%d, I:%d, A:%d, V:%d, M:%d)",
                 nome, raca, classe, forca, inteligencia, agilidade, vida, mana);
+    }
+
+    @Override
+    public Personagem clone(){
+        try {
+            return (Personagem) super.clone();
+        } catch (CloneNotSupportedException e) {
+            throw new RuntimeException("Clone não suportado",e);
+        }
     }
 
 }

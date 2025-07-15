@@ -1,4 +1,7 @@
-package br.edu.ifpb.ads.padroes.atv1.rpg;
+package br.edu.ifpb.ads.padroes.atv1.rpg.Personagens;
+
+import br.edu.ifpb.ads.padroes.atv1.rpg.Armaduras.Armadura;
+import br.edu.ifpb.ads.padroes.atv1.rpg.Armas.Arma;
 
 public class CriadorPersonagem {
 
